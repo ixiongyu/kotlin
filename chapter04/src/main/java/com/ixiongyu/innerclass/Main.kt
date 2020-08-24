@@ -5,6 +5,11 @@ import java.io.FileOutputStream
 import java.io.ObjectOutputStream
 
 /**
+ * 申明                java                      kotlin
+ * 嵌套类              static class A            class A
+ * 内部类              class A                   inner class  A
+ *
+ *
  * Kotlin中没有显示修饰符的嵌套类于java中的static修饰的是一样的。
  * Kotlin中inner修饰的嵌套类和java中非static嵌套类是一样的
  * @author  xiongyu
