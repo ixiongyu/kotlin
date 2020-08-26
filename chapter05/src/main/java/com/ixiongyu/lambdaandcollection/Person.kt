@@ -4,14 +4,16 @@ package com.ixiongyu.lambdaandcollection
  * @author  xiongyu
  * @version Create at ：2020/8/25 下午9:04
  */
-data class Person(val name: String, val age: Int) {}
+data class Person(val name: String, val age: Int) {
+}
 
 
 fun main(args: Array<String>) {
 //    base()
-    foreach()
-    other();
+//    foreach()
+//    other();
 
+    collectionApi()
 }
 
 fun Person.isAdult() = age >= 21
@@ -48,6 +50,17 @@ fun other() {
 
 fun sendMail(person: Person, message: String) {
     println("send $person message:$message")
+
+}
+
+
+fun collectionApi() {
+
+    val personList = listOf(Person("雄霸", 55), Person("雄霸吧", 56), Person("雄霸儿", 12))
+
+    println(personList.filter { it.age == personList.maxByOrNull(Person::age)!!.age })
+    println(personList.findLast { person -> person.isAdult() })
+    println(personList.groupBy { person: Person -> person.name.contains("儿") })
 
 }
 
