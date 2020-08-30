@@ -7,6 +7,8 @@ package com.ixiongyu.nulls
 fun main(args: Array<String>) {
     println("你好".strLen())
     println(stringCanNullLen(null))
+    val nullString:String?=null
+    println(nullString.isNullOrBlank())
 
 }
 
