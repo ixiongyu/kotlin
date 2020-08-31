@@ -25,7 +25,5 @@ open class MyServiceTest {
     open fun testAction() {
         assertEquals("foo", myService!!.performAction())
         assertEquals("foo", myServiceLateInit.performAction())
-
-
     }
 }

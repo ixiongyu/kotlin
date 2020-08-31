@@ -7,9 +7,16 @@ package com.ixiongyu.nulls
 fun main(args: Array<String>) {
     println("你好".strLen())
     println(stringCanNullLen(null))
-    val nullString:String?=null
+    val nullString: String? = null
     println(nullString.isNullOrBlank())
-
+    val listOf = listOf(1, null, 3)
+    val filterNotNull = listOf.filterNotNull()
+    println(filterNotNull.size)
+    println(filterNotNull.sum())
+    val mutableListOf = mutableListOf(1, 2, 34, null)
+    mutableListOf.add(1)
+    val array = Array(26) { i -> ('a' + i).toString() }
+    println(array.joinToString(""))
 }
 
 
