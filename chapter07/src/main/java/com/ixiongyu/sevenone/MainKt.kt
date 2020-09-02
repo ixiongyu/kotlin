@@ -2,7 +2,7 @@ package com.ixiongyu.sevenone
 
 import java.math.BigDecimal
 import java.time.LocalDate
-import java.time.LocalDateTime
+import kotlin.properties.Delegates
 
 /**
  * === 检查是否是同一个对象的引用 和Java中的==相同
@@ -29,25 +29,34 @@ fun main() {
     println(zero++);
     println(++zero)
 
+    val(x,y)=plus;
+    println(x)
+    println(y)
+
+    val newYear = LocalDate.ofYearDay(2020, 1)
+    val daysOff = newYear.minusDays(1)..newYear
+    for (localDate in daysOff) {
+        println(localDate)
+    }
 
 }
 
 operator fun ClosedRange<LocalDate>.iterator(): Iterator<LocalDate> =
         object : Iterator<LocalDate> {
-            var current = start;
+            var current = start
             override fun hasNext(): Boolean {
                 return current <= endInclusive
             }
 
 //            override fun next(): LocalDate {
-//               return current=current.plusDays(1)
+//                return current.plusDays(1)
 //            }
 
 
             override fun next(): LocalDate {
-                return current.apply {
+                return current.apply(fun LocalDate.() {
                     current = plusDays(1)
-                }
+                })
             }
 
         }
