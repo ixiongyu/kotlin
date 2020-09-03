@@ -1,6 +1,6 @@
 package com.ixiongyu.funtype
 
-import java.util.function.BiPredicate
+import com.ixiongyu.jointostring.joinToMyString
 
 /**
  * @author  xiongyu
@@ -10,7 +10,7 @@ import java.util.function.BiPredicate
 fun main() {
 
     val action = { str: Any? -> println(str) }
-    action(1)
+    action(12)
 
 
     var funOrNull: ((Int, Int) -> Int)? = null
@@ -27,11 +27,13 @@ fun main() {
     val string = "123asdcsa3"
     val filter = string.filter { c -> c in 'a'..'z' }
     println(filter)
+
+
 }
 
 
 fun towAndThree(operation: (Int, Int) -> Int) {
-    val result = operation(2, 3)
+    val result = operation(3, 3)
     println(result)
 }
 
