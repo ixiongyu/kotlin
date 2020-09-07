@@ -18,6 +18,7 @@ fun main() {
             SiteVisit("/", Os.ANDROID, 42.0),
             SiteVisit("/", Os.IOS, 1.0),
     )
+
     val averageDuration = listOf.averageDuration { siteVisit -> siteVisit.os in listOf(Os.ANDROID, Os.IOS) }
     println(averageDuration)
 }
