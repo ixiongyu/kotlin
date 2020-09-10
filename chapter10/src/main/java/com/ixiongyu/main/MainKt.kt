@@ -11,6 +11,6 @@ fun main() {
     val person = Person("xiongyu", 18)
     val serialize = serialize(person)
     println(serialize)
-    val deserialize = deserialize<Person>(serialize)
+    val deserialize = deserialize<Person>(serialize+"】")
     println(deserialize)
 }

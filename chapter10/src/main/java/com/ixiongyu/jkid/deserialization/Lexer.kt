@@ -3,10 +3,14 @@ package com.ixiongyu.jkid.deserialization
 import java.io.Reader
 
 interface Token {
+    //逗号
     object COMMA : Token
+    //冒号
     object COLON : Token
+    //大括号
     object LBRACE : Token
     object RBRACE : Token
+    //括号
     object LBRACKET : Token
     object RBRACKET : Token
 

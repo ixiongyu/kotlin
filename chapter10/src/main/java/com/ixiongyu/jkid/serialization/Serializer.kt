@@ -5,6 +5,9 @@ import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty1
 import kotlin.reflect.full.memberProperties
 
+/**
+ * buildString会创建一个StringBuilder，并让你在lambda中填充他的内容，这里是serializeObject(obj)的调用提供了需要填充的内容
+ */
 fun serialize(obj: Any): String = buildString { serializeObject(obj) }
 
 /* the first implementation discussed in the book */
