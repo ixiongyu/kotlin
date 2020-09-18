@@ -44,6 +44,7 @@ interface ValueSerializer<T> {
 /**
  * @see ValueSerializer
  * 使用该注解表示该属性使用自定义的注解实现规则
+ * <*>表示允许序列化任何值，前面的out表示接受实现了ValueSerializer的任何类。
  */
 @Target(AnnotationTarget.PROPERTY)
 annotation class CustomSerializer(val serializerClass: KClass<out ValueSerializer<*>>)
