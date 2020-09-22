@@ -1,6 +1,7 @@
 package com.ixiongyu.test
 
 import com.ixiongyu.entity.Person
+import com.ixiongyu.serialization.serialize
 import org.junit.Test
 import kotlin.reflect.full.memberProperties
 
@@ -12,7 +13,7 @@ import kotlin.reflect.full.memberProperties
 class BaseTest {
     @Test
     fun testReflect() {
-        val person = Person("xiongyu", 18)
+        val person = Person("xiongyu", 18,1)
         val javaClass = person.javaClass
         println(javaClass)
         val kotlin = javaClass.kotlin;
@@ -27,5 +28,12 @@ class BaseTest {
         kFunction1(12)
         val kProperty0 = person::age
         kProperty0.get()
+    }
+
+
+    @Test
+    fun testSerialize() {
+        val person = Person("xiongyu", 18,1)
+        println(serialize(person))
     }
 }
