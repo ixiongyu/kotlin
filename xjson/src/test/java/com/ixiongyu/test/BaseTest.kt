@@ -3,6 +3,7 @@ package com.ixiongyu.test
 import com.ixiongyu.entity.Person
 import com.ixiongyu.serialization.serialize
 import org.junit.Test
+import java.time.LocalDateTime
 import kotlin.reflect.full.memberProperties
 
 /**
@@ -13,7 +14,7 @@ import kotlin.reflect.full.memberProperties
 class BaseTest {
     @Test
     fun testReflect() {
-        val person = Person("xiongyu", 18,1)
+        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3"))
         val javaClass = person.javaClass
         println(javaClass)
         val kotlin = javaClass.kotlin;
@@ -33,7 +34,7 @@ class BaseTest {
 
     @Test
     fun testSerialize() {
-        val person = Person("xiongyu", 18,1)
+        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3"))
         println(serialize(person))
     }
 }

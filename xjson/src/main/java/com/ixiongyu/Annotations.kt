@@ -37,8 +37,8 @@ annotation class DeserializeInterface(val targetClass: KClass<out Any>)
  * 自定义序列化实现
  */
 interface ValueSerializer<T> {
-    fun toJsonValue(t: T): String
-    fun formJsonValue(json: String): T
+    fun toJsonValue(value: T): Any?
+    fun fromJsonValue(jsonValue: Any?)
 }
 
 /**
