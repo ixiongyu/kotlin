@@ -72,7 +72,7 @@ private fun StringBuilder.serializeMap(data: Map<*, *>) {
     data.entries.joinToStringBuilder(this, prefix = "{", postfix = "}") {
         serializeString(it.key.toString())
         append(":")
-        serializePropertyValue(it.value.toString())
+        serializePropertyValue(it.value)
     }
 }
 

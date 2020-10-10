@@ -15,6 +15,6 @@ data class Person(
         val age: Int,
         @JsonExclude val sex: Int,
         @CustomSerializer(DateSerializer::class)  val birthDate: LocalDateTime,
-        val map: HashMap<String, String>,
+        val map: HashMap<Any, Any>,
 )
 

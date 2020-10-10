@@ -14,7 +14,7 @@ import kotlin.reflect.full.memberProperties
 class BaseTest {
     @Test
     fun testReflect() {
-        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3"))
+        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3", 1 to 20))
         val javaClass = person.javaClass
         println(javaClass)
         val kotlin = javaClass.kotlin;
@@ -34,7 +34,7 @@ class BaseTest {
 
     @Test
     fun testSerialize() {
-        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3"))
+        val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3", 1 to 20))
         println(serialize(person))
     }
 }
