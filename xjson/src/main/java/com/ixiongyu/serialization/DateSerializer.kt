@@ -12,11 +12,9 @@ import java.time.format.DateTimeFormatter
 object DateSerializer : ValueSerializer<LocalDateTime> {
     private var dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 
-    override fun toJsonValue(value: LocalDateTime): Any? =
-            dateFormat.format(value)
+    override fun toJsonValue(value: LocalDateTime): Any? = dateFormat.format(value)
 
-    override fun fromJsonValue(jsonValue: Any?) {
-        dateFormat.parse(jsonValue as String)
-    }
+    override fun fromJsonValue(jsonValue: Any?): LocalDateTime = LocalDateTime.parse(jsonValue as String, dateFormat)
+
 
 }

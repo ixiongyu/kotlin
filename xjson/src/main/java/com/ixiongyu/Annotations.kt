@@ -38,7 +38,7 @@ annotation class DeserializeInterface(val targetClass: KClass<out Any>)
  */
 interface ValueSerializer<T> {
     fun toJsonValue(value: T): Any?
-    fun fromJsonValue(jsonValue: Any?)
+    fun fromJsonValue(jsonValue: Any?): T
 }
 
 /**
