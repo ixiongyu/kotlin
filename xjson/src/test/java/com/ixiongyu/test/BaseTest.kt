@@ -1,5 +1,6 @@
 package com.ixiongyu.test
 
+import com.ixiongyu.deserialization.deserialize
 import com.ixiongyu.entity.Person
 import com.ixiongyu.serialization.serialize
 import org.junit.Test
@@ -36,5 +37,14 @@ class BaseTest {
     fun testSerialize() {
         val person = Person("xiongyu", 18, 1, LocalDateTime.now(), hashMapOf("1" to "1", "2" to "3", 1 to 20))
         println(serialize(person))
+    }
+
+
+    @Test
+    fun testDeserialize() {
+        var josn = "{\"age\":18, \"birthDate\":\"2020-10-15 11:05:16\", \"map\":{\"1\":\"1\", \"1\":20, \"2\":\"3\"}, " +
+                "\"customName\":\"xiongyu\"}";
+        val deserialize = deserialize<Person>(josn)
+        println(deserialize)
     }
 }
